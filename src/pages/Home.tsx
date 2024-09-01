@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { Carousel } from "@material-tailwind/react";
+// import { Carousel } from "@material-tailwind/react";
  
 const Home: React.FC = () => {
     // Check if user is logged in and get user role from sessionStorage
