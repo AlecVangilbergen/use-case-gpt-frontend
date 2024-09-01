@@ -1,6 +1,9 @@
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+
 /** @type {import('tailwindcss').Config} */
 // tailwind.config.js
-module.exports = {
+module.exports = withMT( {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class", // Enable dark mode based on the presence of 'dark' class
   theme: {
@@ -31,4 +34,4 @@ module.exports = {
     },
   },
   plugins: [require("daisyui")],
-};
+});
