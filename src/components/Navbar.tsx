@@ -2,17 +2,19 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Login from './LoginComponent';
+import { Button } from "@material-tailwind/react";
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
+
 
   // Function to handle logout
   const handleLogout = () => {
     sessionStorage.removeItem('user');
     sessionStorage.removeItem('token');
-    navigate('/')
-    toast.success('Logged in successfully', {
+    navigate('/');
+    toast.success('Logged out successfully', {
       onClose: () => window.location.reload(),
       autoClose: 1000
     });
@@ -21,8 +23,8 @@ const Navbar: React.FC = () => {
 
   // Check if user is logged in
   const token = sessionStorage.getItem('token');
-  const user = sessionStorage.getItem('user');
-  const role = user ? JSON.parse(user).role : null;
+  //const user = sessionStorage.getItem('user');
+
 
   // Check if the token is expired
   const isTokenExpired = (token: string): boolean => {
@@ -68,81 +70,37 @@ const Navbar: React.FC = () => {
             tabIndex={0}
             className="menu dropdown-content z-[1] p-2 shadow rounded-box w-52 mt-4 bg-dark-neutral dark:bg-base-900 text-base-content dark:text-dark-text"
           >
-              <>
-                <li>
-                  <Link to="/users" className="text-dark-text dark:text-dark-text">
-                    View Users
-                  </Link>
-                </li>
-              </>
+            <>
+              <li>
+                <Link to="/users" className="text-dark-text dark:text-dark-text">
+                  View Users
+                </Link>
+              </li>
+            </>
           </ul>
         </div>
       </div>
       <div className="flex-1">
         <div className="btn btn-ghost">
-        <Link to="/" className="text-l md:text-2xl">
-          Use-Case-GPT
-        </Link>
+          <Link to="/" className="text-l md:text-2xl">
+            Use-Case-GPT
+          </Link>
         </div>
       </div>
-
-        <div className="md:block hidden">
-            {role === 'student' && (
-                    <>
-                        <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">
-                            <Link to="/assignment" className="text-base-content dark:text-dark-text">Assignments</Link>
-                        </div>
-                    </>
-                )}
-
-                {role === 'teacher' && (
-                    <>
-                        <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">
-                            <Link to="/assignment">Assignments</Link>
-                        </div>
-
-                        <div className="dropdown dropdown-bottom">
-                            <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">
-                                Courses
-                            </div>
-                            <ul
-                                tabIndex={0}
-                                className="menu dropdown-content z-[1] p-2 shadow rounded-box w-52 mt-4 bg-dark-neutral dark:bg-base-900 text-base-content dark:text-dark-text"
-                            >
-                                <li>
-                                    <Link to="/registercourse" className="text-dark-text dark:text-dark-text">Register Course</Link>
-                                </li>
-                                <li>
-                                    <Link to="/courses" className="text-dark-text dark:text-dark-text">Course Overview</Link>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">
-                            <Link to="/submissions">Submissions</Link>
-                        </div>
-
-                        <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">
-                            <Link to="/dashboard">User Dashboard</Link>
-                        </div>
-                    </>
-                )}  
+      <div>
+        <div className="mr-1">
+          {!isLoggedIn && (
+            <Login />
+          )}
+          {isLoggedIn && (
+            <Button onClick={handleLogout} color="blue" type="button" placeholder="" onPointerEnterCapture={() => { }} onPointerLeaveCapture={() => { }}>{'Sign Out'}</Button>
+          )}
         </div>
 
-        <div>
-            <div className="mr-1">
-                {!isLoggedIn && (
-                    <Link to="/login" className="btn bg-dark-neutral text-dark-text dark:bg-dark-btn dark:text-light-text dark:btn-primary">
-                    Login
-                    </Link>
-                )}
-                {isLoggedIn && (
-                    <button onClick={handleLogout} className="btn bg-light-btn text-dark-text dark:bg-dark-btn dark:text-light-text dark:btn-primary">
-                    Logout
-                    </button>
-                )}
-            </div>
-        </div>
+      </div>
+
+
+
 
       <div className="flex-none">
         <label className="flex cursor-pointer gap-2 mr-10" htmlFor="theme-switch">
