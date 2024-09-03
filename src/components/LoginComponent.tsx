@@ -106,7 +106,7 @@ const Login: React.FC = () => {
                             Don&apos;t have an account?
                             <Typography
                                 as="a"
-                                href="use-case-gpt-frontend/register"
+                                href="/register"
                                 variant="small"
                                 color="blue-gray"
                                 className="ml-1 font-bold"
