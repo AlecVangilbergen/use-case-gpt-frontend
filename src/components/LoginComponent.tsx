@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
@@ -104,18 +104,7 @@ const Login: React.FC = () => {
                         </Button>
                         <Typography variant="small" className="mt-4 flex justify-center" placeholder="" onPointerEnterCapture={() => { }} onPointerLeaveCapture={() => { }}>
                             Don&apos;t have an account?
-                            <Typography
-                                as="a"
-                                href="/use-case-gpt-frontend/register"
-                                variant="small"
-                                color="blue-gray"
-                                className="ml-1 font-bold"
-                                placeholder=""
-                                onPointerEnterCapture={() => { }}
-                                onPointerLeaveCapture={() => { }}
-                            >
-                            Sign up
-                            </Typography>
+                            <Link to="/register" onClick={handleOpen}>Sign Up</Link>
                         </Typography>
                     </CardFooter>
                     <ToastContainer position="top-center" />
