@@ -1,81 +1,184 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-// import { Carousel } from "@material-tailwind/react";
- 
+import { Carousel, Typography, Button } from "@material-tailwind/react";
+
 const Home: React.FC = () => {
-    // Check if user is logged in and get user role from sessionStorage
-    const user = sessionStorage.getItem('user');
-    const role = user ? JSON.parse(user).role : null;
-    
+  // Check if user is logged in and get user role from sessionStorage
+  const user = sessionStorage.getItem('user');
+  const role = user ? JSON.parse(user).role : null;
 
-    // Function to determine the link based on user role
-    const getStartedLink = () => {
-        if (role === 'teacher') {
-            return '/assignment';
-        } else if (role === 'student') {
-            return '/assignment';
-        } else {
-            return '/login';
-        }
-    };
-    return (
-        <main className="min-h-screen bg-neutral-100 dark:bg-dark-neutral">
-            <div className="container mx-auto">
-                {/* Hero section */}
-                {role === null && (
-                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
-                    <div className="col-span-full">
-                        <div className="hero bg-base rounded-lg p-8">
-                            <div className="hero-content text-center">
-                                <div className="max-w-7xl mx-auto mt-10">
-                                    <h1 className="text-6xl font-bold text-light-text dark:text-dark-text">Use-Case-GPT Homepage.</h1>
-                                    <Link to={getStartedLink()} className="btn bg-light-btn text-dark-text dark:bg-dark-btn dark:text-light-text dark:btn-primary mt-8">Get Started</Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                )}  
-                <ToastContainer position="top-center" />
 
+  // Function to determine the link based on user role
+  const getStartedLink = () => {
+    if (role === 'teacher') {
+      return '/assignment';
+    } else if (role === 'student') {
+      return '/assignment';
+    } else {
+      return '/login';
+    }
+  };
+  return (
+    <main className="min-h-screen bg-neutral-100 dark:bg-dark-neutral">
+      <div className="container mx-auto">
+        {/* Hero section */}
+        {role === null && (
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
+            <div className="col-span-full">
+              <div className="hero bg-base rounded-lg p-8">
+                <div className="hero-content text-center">
+                  <div className="max-w-7xl mx-auto mt-10">
+                    <h1 className="text-6xl font-bold text-light-text dark:text-dark-text">Use-Case-GPT Homepage.</h1>
+                    <Link to={getStartedLink()} className="btn bg-light-btn text-dark-text dark:bg-dark-btn dark:text-light-text dark:btn-primary mt-8">Get Started</Link>
+                  </div>
+                </div>
+              </div>
             </div>
-                  {/* Features Section */}
+          </section>
+        )}
+        <ToastContainer position="top-center" />
+
+      </div>
       <section className="py-20">
+      <div className="max-w-7xl mx-auto mt-10 mb-10">
+        <h1 className='flex justify-center items-center text-5xl font-bold text-light-text dark:text-dark-text'> Explore some of its features</h1>
+        <p className="flex justify-center items-center py-6 text-3xl text-gray-700 dark:text-gray-300">Get Use-Case-GPT and start personalising your GPT chats!</p>
+        </div>
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our Features</h2>
-            <p className="text-gray-600">Explore the powerful tools we provide to enhance your experience.</p>
-          </div>
-          <div className="flex flex-wrap">
-            {/* Feature Card 1 */}
-            <div className="w-full md:w-1/3 p-4 animate__animated animate__fadeInLeft">
-              <div className="card shadow-lg bg-white">
-                <div className="card-body">
-                  <h3 className="text-xl font-bold">Feature One</h3>
-                  <p className="text-gray-600">Detailed description of the feature and its benefits.</p>
+          <Carousel
+            className="rounded-xl"
+            placeholder={null}
+            onPointerEnterCapture={() => { }}
+            onPointerLeaveCapture={() => { }}
+          >
+            <div className="relative h-full w-full">
+              <img
+                src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+                alt="image 1"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
+                <div className="w-3/4 text-center md:w-2/4">
+                  <Typography
+                    variant="h1"
+                    color="white"
+                    className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                    placeholder={null}
+                    onPointerEnterCapture={() => { }}
+                    onPointerLeaveCapture={() => { }}
+                  >
+                    The Beauty of Nature
+                  </Typography>
+                  <Typography
+                    variant="lead"
+                    color="white"
+                    className="mb-12 opacity-80"
+                    placeholder={null}
+                    onPointerEnterCapture={() => { }}
+                    onPointerLeaveCapture={() => { }}
+                  >
+                    It is not so much for its beauty that the forest makes a claim
+                    upon men&apos;s hearts, as for that subtle something, that quality
+                    of air that emanation from old trees, that so wonderfully changes
+                    and renews a weary spirit.
+                  </Typography>
+                  <div className="flex justify-center gap-2">
+                    <Button size="lg" color="white" placeholder={null} onPointerEnterCapture={() => { }} onPointerLeaveCapture={() => { }}>
+                      Explore
+                    </Button>
+                    <Button size="lg" color="white" variant="text" placeholder={null} onPointerEnterCapture={() => { }} onPointerLeaveCapture={() => { }}>
+                      Gallery
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
-            {/* Feature Card 2 */}
-            <div className="w-full md:w-1/3 p-4 animate__animated animate__fadeInUp">
-              <div className="card shadow-lg bg-white">
-                <div className="card-body">
-                  <h3 className="text-xl font-bold">Feature Two</h3>
-                  <p className="text-gray-600">Detailed description of the feature and its benefits.</p>
+            <div className="relative h-full w-full">
+              <img
+                src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                alt="image 2"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
+                <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
+                  <Typography
+                    variant="h1"
+                    color="white"
+                    className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                    placeholder={null}
+                    onPointerEnterCapture={() => { }}
+                    onPointerLeaveCapture={() => { }}
+                  >
+                    The Beauty of Nature
+                  </Typography>
+                  <Typography
+                    variant="lead"
+                    color="white"
+                    className="mb-12 opacity-80"
+                    placeholder={null}
+                    onPointerEnterCapture={() => { }}
+                    onPointerLeaveCapture={() => { }}
+                  >
+                    It is not so much for its beauty that the forest makes a claim
+                    upon men&apos;s hearts, as for that subtle something, that quality
+                    of air that emanation from old trees, that so wonderfully changes
+                    and renews a weary spirit.
+                  </Typography>
+                  <div className="flex gap-2">
+                    <Button size="lg" color="white" placeholder={null} onPointerEnterCapture={() => { }} onPointerLeaveCapture={() => { }}>
+                      Explore
+                    </Button>
+                    <Button size="lg" color="white" variant="text" placeholder={null} onPointerEnterCapture={() => { }} onPointerLeaveCapture={() => { }}>
+                      Gallery
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
-            {/* Feature Card 3 */}
-            <div className="w-full md:w-1/3 p-4 animate__animated animate__fadeInRight">
-              <div className="card shadow-lg bg-white">
-                <div className="card-body">
-                  <h3 className="text-xl font-bold">Feature Three</h3>
-                  <p className="text-gray-600">Detailed description of the feature and its benefits.</p>
+            <div className="relative h-full w-full">
+              <img
+                src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+                alt="image 3"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
+                <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
+                  <Typography
+                    variant="h1"
+                    color="white"
+                    className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                    placeholder={null}
+                    onPointerEnterCapture={() => { }}
+                    onPointerLeaveCapture={() => { }}
+                  >
+                    The Beauty of Nature
+                  </Typography>
+                  <Typography
+                    variant="lead"
+                    color="white"
+                    className="mb-12 opacity-80"
+                    placeholder={null}
+                    onPointerEnterCapture={() => { }}
+                    onPointerLeaveCapture={() => { }}
+                  >
+                    It is not so much for its beauty that the forest makes a claim
+                    upon men&apos;s hearts, as for that subtle something, that quality
+                    of air that emanation from old trees, that so wonderfully changes
+                    and renews a weary spirit.
+                  </Typography>
+                  <div className="flex gap-2">
+                    <Button size="lg" color="white" placeholder={null} onPointerEnterCapture={() => { }} onPointerLeaveCapture={() => { }}>
+                      Explore
+                    </Button>
+                    <Button size="lg" color="white" variant="text" placeholder={null} onPointerEnterCapture={() => { }} onPointerLeaveCapture={() => { }}>
+                      Gallery
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Carousel>
         </div>
       </section>
 
@@ -95,9 +198,9 @@ const Home: React.FC = () => {
           </div>
         </div>
       </footer>
-        </main>
-        
-    );
+    </main>
+
+  );
 };
 
 export default Home;

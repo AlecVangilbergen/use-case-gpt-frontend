@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar bg-neutral-100 text-light-text dark:bg-dark-neutral dark:text-dark-text">
       <div className="flex-none">
         <div className="dropdown dropdown-bottom">
-          <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn md:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -70,13 +70,18 @@ const Navbar: React.FC = () => {
             tabIndex={0}
             className="menu dropdown-content z-[1] p-2 shadow rounded-box w-52 mt-4 bg-dark-neutral dark:bg-base-900 text-base-content dark:text-dark-text"
           >
-            <>
-              <li>
-                <Link to="/users" className="text-dark-text dark:text-dark-text">
-                  View Users
-                </Link>
-              </li>
-            </>
+            
+              <>
+                <li>
+                  <Link to="/users" className="text-dark-text dark:text-dark-text">
+                    View Users
+                  </Link>
+                </li>
+              </>
+          
+            
+            
+
           </ul>
         </div>
       </div>
