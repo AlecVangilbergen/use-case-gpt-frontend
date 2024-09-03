@@ -13,7 +13,7 @@ import './App.css'
 
 const App: React.FC = () => {
   return (
-    <Router basename='/use-case-gpt-frontend'>
+    <Router basename='/use-case-gpt-frontend/'>
       <Navbar />
       <ToastContainer position="top-center" />
       <Routes>
