@@ -48,7 +48,18 @@ const Login: React.FC = () => {
 
     return (
         <>
-            <Button onClick={handleOpen} color="blue" type="button" placeholder="" onPointerEnterCapture={() => { }} onPointerLeaveCapture={() => { }}>{'Sign In'}</Button>
+            <Typography
+                as="a"
+                variant="small"
+                color="blue-gray"
+                className="ml-1 font-bold"
+                onClick={handleOpen}
+                placeholder=""
+                onPointerEnterCapture={() => { }}
+                onPointerLeaveCapture={() => { }}
+            >
+                Sign In
+            </Typography>
             <Dialog
                 size="xs"
                 open={open}
@@ -95,7 +106,7 @@ const Login: React.FC = () => {
                             Don&apos;t have an account?
                             <Typography
                                 as="a"
-                                href="#signup"
+                                href="use-case-gpt-frontend/register"
                                 variant="small"
                                 color="blue-gray"
                                 className="ml-1 font-bold"

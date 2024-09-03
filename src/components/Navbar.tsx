@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
       <div>
-        <div className="mr-1">
+        <div className="mr-3 mb-1">
           {!isLoggedIn && (
             <Login />
           )}
