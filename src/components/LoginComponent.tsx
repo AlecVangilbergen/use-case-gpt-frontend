@@ -110,12 +110,12 @@ const Login: React.FC = () => {
                                 variant="small"
                                 color="blue-gray"
                                 className="ml-1 font-bold"
-                                onClick={handleOpen}
+                                
                                 placeholder=""
                                 onPointerEnterCapture={() => { }}
                                 onPointerLeaveCapture={() => { }}
                             >
-                                Sign up
+                            Sign up
                             </Typography>
                         </Typography>
                     </CardFooter>
