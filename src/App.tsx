@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ChatPage from './pages/ChatPage';
+import DocumentManagerPage from './pages/DocumentManagerPage';
 
 import './App.css'
 
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/chat" element={<ChatPage />} />
+        <Route path="/document-manager" element={<DocumentManagerPage />} />
       </Routes>
     </Router>
   );

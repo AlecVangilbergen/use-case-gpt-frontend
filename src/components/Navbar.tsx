@@ -87,6 +87,11 @@ const Navbar: React.FC = () => {
                     Chat
                   </Link>
                 </li>
+                <li>
+                  <Link to="/document-manager" className="text-dark-text dark:text-dark-text">
+                    Documents
+                  </Link>
+                </li>
               </>
           
             
