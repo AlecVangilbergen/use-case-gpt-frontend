@@ -82,6 +82,11 @@ const Navbar: React.FC = () => {
                     Add User
                   </Link>
                 </li>
+                <li>
+                  <Link to="/chat" className="text-dark-text dark:text-dark-text">
+                    Chat
+                  </Link>
+                </li>
               </>
           
             
