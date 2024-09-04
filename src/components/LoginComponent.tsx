@@ -52,7 +52,7 @@ const Login: React.FC = () => {
                 as="a"
                 variant="small"
                 color="blue-gray"
-                className="ml-1 font-bold"
+                className="ml-1 font-bold dark:text-dark-text"
                 onClick={handleOpen}
                 placeholder=""
                 onPointerEnterCapture={() => { }}
