@@ -17,3 +17,20 @@ export const register = async (userData: any) => {
         throw error.response.data.detail || "An error occurred while registering";
     }
     };
+
+export const getAllUsers = async () => {
+    try {
+        const config = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        mode: "cors", // Ensure CORS mode
+        };
+        const response = await axios.get(`${API_URL}/users`, config);
+        return response.data;
+
+    }
+    catch (error: any) {
+        throw error.response.data.detail || "An error occurred while fetching users";
+    }};
