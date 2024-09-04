@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-
+import { uploadDocument } from '../services/documentService';
 const DocumentUpload: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
@@ -20,9 +19,7 @@ const DocumentUpload: React.FC = () => {
     setUploading(true);
 
     try {
-      await axios.post('/api/documents/upload', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
+      await uploadDocument(file);
       alert('Document uploaded successfully');
       setFile(null);  // Reset file input after upload
     } catch (error) {

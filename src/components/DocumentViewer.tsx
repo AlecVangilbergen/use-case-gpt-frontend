@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-
+import { getDocuments } from '../services/documentService';
 interface Document {
   id: number;
   content: string;
@@ -14,9 +13,7 @@ const DocumentViewer: React.FC = () => {
     // Replace with your backend API URL
     const fetchDocuments = async () => {
       try {
-        const response = await axios.get<Document[]>('/api/documents', {
-          params: { user_id: 1 }, // Assuming user_id is 1 for demo
-        });
+        const response = await getDocuments(1);  // Replace with actual user ID logic
         setDocuments(response.data);
       } catch (error) {
         console.error('Error fetching documents:', error);
