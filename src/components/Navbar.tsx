@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/document-manager" className="text-dark-text dark:text-dark-text">
+                  <Link to="/document-viewer" className="text-dark-text dark:text-dark-text">
                     Documents
                   </Link>
                 </li>

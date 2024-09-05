@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { getDocuments } from '../services/documentService';
+import { getDocumentsByUser } from '../services/documentService';
+
 interface Document {
   id: number;
   content: string;
@@ -8,13 +9,14 @@ interface Document {
 
 const DocumentViewer: React.FC = () => {
   const [documents, setDocuments] = useState<Document[]>([]);
+  const userId = 1; // Replace with actual user ID logic
 
   useEffect(() => {
-    // Replace with your backend API URL
     const fetchDocuments = async () => {
       try {
-        const response = await getDocuments(1);  // Replace with actual user ID logic
-        setDocuments(response.data);
+        const response = await getDocumentsByUser(userId);  // Fetch documents for the user
+        console.log('Documents:', response);
+        setDocuments(response);  // Set the response directly to state
       } catch (error) {
         console.error('Error fetching documents:', error);
       }

@@ -1,5 +1,5 @@
 import React from "react";
-import DocumentManager from "../components/DocumentManager";
+import DocumentManager from "../components/DocumentViewer";
 
 
 const DocumentManagerPage: React.FC = () => {

@@ -19,11 +19,33 @@ export const uploadDocument = async (user_id: number, file: File) => {
     }
     };
 
-export const getDocuments = async (userId: number) => {
+export const getDocuments = async () => {
     try {
-        const response = await axios.get(`${API_URL}/documents`, {
-        params: { user_id: userId },
-        });
+    const config = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        mode: "cors", // Ensure CORS mode
+        };
+        const response = await axios.get(`${API_URL}/documents/all`, config);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching documents:", error);
+        return [];
+    }
+}
+
+export const getDocumentsByUser = async (id: number) => {
+    try {
+        const config = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        mode: "cors", // Ensure CORS mode
+        };
+        const response = await axios.get(`${API_URL}/documents/id/${id}`, config);
         return response.data;
     } catch (error) {
         console.error("Error fetching documents:", error);
