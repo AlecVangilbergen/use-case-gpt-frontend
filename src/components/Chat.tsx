@@ -12,8 +12,10 @@ const Chat: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState<string>('');
   const userId = 1;  // Replace with actual user ID logic
+  const [loading, setLoading] = useState(false);
 
   const handleSendMessage = async () => {
+    setLoading(true);
     if (!input.trim()) return;
 
     const newMessages = [...messages, { role: 'user' as 'user' | 'assistant', content: input }];
@@ -23,12 +25,16 @@ const Chat: React.FC = () => {
     try {
       const response = await sendMessage(input, userId);
 
-      const assistantMessage = response.data.response;
+      console.log('Assistant response:', response);
+
+      const assistantMessage = response;
 
       setMessages([...newMessages, { role: 'assistant', content: assistantMessage }]);
     } catch (error) {
       console.error("Error during chat:", error);
       setMessages([...newMessages, { role: 'assistant', content: 'Sorry, something went wrong.' }]);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -43,7 +49,7 @@ const Chat: React.FC = () => {
         Chat with Use-Case-GPT
       </Typography>
 
-      <div className="h-96 overflow-y-auto space-y-4">
+      <div className="h-[520px] overflow-y-auto space-y-4">
         {messages.map((message, index) => (
           <ChatMessage key={index} role={message.role} content={message.content} />
         ))}
@@ -67,7 +73,8 @@ const Chat: React.FC = () => {
           onPointerEnterCapture={() => {}}
           onPointerLeaveCapture={() => {}}
         >
-          Send
+        {loading ? <span className="loading loading-spinner loading-xs"></span> : 'Send'}
+
         </Button>
       </div>
     </Card>
