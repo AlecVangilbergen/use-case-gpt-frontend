@@ -70,37 +70,49 @@ const Navbar: React.FC = () => {
             tabIndex={0}
             className="menu dropdown-content z-[1] p-2 shadow rounded-box w-52 mt-4 bg-dark-neutral dark:bg-base-900 text-base-content dark:text-dark-text"
           >
-            
-              <>
+
+            <>{
+              isLoggedIn && (
                 <li>
                   <Link to="/users" className="text-dark-text dark:text-dark-text">
                     View Users
                   </Link>
                 </li>
-                <li>
-                  <Link to="/register" className="text-dark-text dark:text-dark-text">
-                    Add User
-                  </Link>
-                </li>
+              )
+            }
+              {isLoggedIn && (
                 <li>
                   <Link to="/chat" className="text-dark-text dark:text-dark-text">
                     Chat
                   </Link>
                 </li>
+              )
+              }
+              <li>
+                <Link to="/register" className="text-dark-text dark:text-dark-text">
+                  Add User
+                </Link>
+              </li>
+              {isLoggedIn && (
                 <li>
                   <Link to="/document-viewer" className="text-dark-text dark:text-dark-text">
                     Documents
                   </Link>
-                </li>
+                </li>)
+              }
+              {isLoggedIn && (
                 <li>
                   <Link to="/upload-document" className="text-dark-text dark:text-dark-text">
                     Upload Document
                   </Link>
                 </li>
-              </>
-          
-            
-            
+              )
+              }
+
+            </>
+
+
+
 
           </ul>
         </div>

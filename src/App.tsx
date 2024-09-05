@@ -9,6 +9,8 @@ import ChatPage from './pages/ChatPage';
 import DocumentManagerPage from './pages/DocumentManagerPage';
 import UserOverview from './pages/UserOverviewPage';
 import UploadDocumentPage from './pages/UploadDocumentPage';
+import Unauthorized from './pages/UnauthorizedPage';
+import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 import './App.css'
 
@@ -24,10 +26,11 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/chat" element={<ChatPage />} />
-        <Route path="/document-viewer" element={<DocumentManagerPage />} />
-        <Route path="/upload-document" element={<UploadDocumentPage />} />
-        <Route path="/users" element={<UserOverview />} />
+        <Route path="/chat" element={<ProtectedRoute component={ChatPage}/>} />
+        <Route path="/document-viewer" element={<ProtectedRoute component={DocumentManagerPage} />} />
+        <Route path="/upload-document" element={<ProtectedRoute component={UploadDocumentPage} />} />
+        <Route path="/users" element={<ProtectedRoute component={UserOverview} />} />
+        <Route path="/unauthorized" element={<Unauthorized />} />
       </Routes>
     </Router>
   );
