@@ -9,6 +9,7 @@ const DocumentUpload: React.FC = () => {
       setFile(e.target.files[0]);
     }
   };
+  const userId = 1;
 
   const handleUpload = async () => {
     if (!file) return;
@@ -19,7 +20,7 @@ const DocumentUpload: React.FC = () => {
     setUploading(true);
 
     try {
-      await uploadDocument(file);
+      await uploadDocument(userId, file);
       alert('Document uploaded successfully');
       setFile(null);  // Reset file input after upload
     } catch (error) {

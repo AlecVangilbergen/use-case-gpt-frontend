@@ -92,6 +92,11 @@ const Navbar: React.FC = () => {
                     Documents
                   </Link>
                 </li>
+                <li>
+                  <Link to="/upload-document" className="text-dark-text dark:text-dark-text">
+                    Upload Document
+                  </Link>
+                </li>
               </>
           
             

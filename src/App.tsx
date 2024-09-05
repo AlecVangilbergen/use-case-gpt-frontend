@@ -8,6 +8,7 @@ import RegisterPage from './pages/RegisterPage';
 import ChatPage from './pages/ChatPage';
 import DocumentManagerPage from './pages/DocumentManagerPage';
 import UserOverview from './pages/UserOverviewPage';
+import UploadDocumentPage from './pages/UploadDocumentPage';
 
 import './App.css'
 
@@ -25,6 +26,7 @@ const App: React.FC = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/chat" element={<ChatPage />} />
         <Route path="/document-manager" element={<DocumentManagerPage />} />
+        <Route path="/upload-document" element={<UploadDocumentPage />} />
         <Route path="/users" element={<UserOverview />} />
       </Routes>
     </Router>
