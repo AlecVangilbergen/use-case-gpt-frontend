@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getDocumentsByUser } from '../services/documentService';
+import { getLoggedInUserId } from '../services/authService';
 
 interface Document {
   id: number;
@@ -9,7 +10,8 @@ interface Document {
 
 const DocumentViewer: React.FC = () => {
   const [documents, setDocuments] = useState<Document[]>([]);
-  const userId = 1; // Replace with actual user ID logic
+  console.log('User ID:', getLoggedInUserId());
+  const userId = getLoggedInUserId() || 0;
 
   useEffect(() => {
     const fetchDocuments = async () => {

@@ -13,7 +13,7 @@ import {
     Input,
 } from "@material-tailwind/react";
 import { login } from '../services/authService';
-import { parseJwt } from './Login'
+import { getUserByEmail } from '../services/userService';
 
 
 const Login: React.FC = () => {
@@ -30,9 +30,10 @@ const Login: React.FC = () => {
         try {
             const response = await login({ email, password });
             const token = response.access_token;
-            const decodedToken = parseJwt(token);
-            const userRole = decodedToken.user_type;
-            sessionStorage.setItem('user', JSON.stringify({ email, role: userRole }));
+            const user = await getUserByEmail(email);
+            const user_id = user.id;
+            sessionStorage.setItem('user', JSON.stringify({ email }));
+            sessionStorage.setItem('user_id', user_id);
             sessionStorage.setItem('token', token);
             toast.success('Logged in successfully', {
                 onClose: () => navigate('/'),

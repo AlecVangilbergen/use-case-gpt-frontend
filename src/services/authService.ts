@@ -18,4 +18,12 @@ export const login = async (userData: any) => {
     }
 }
 
+export const getLoggedInUserId = () => {
+    const id =  sessionStorage.getItem('user_id');
+    if (id) {
+      return parseInt(id, 10);
+    }
+    return null;
+  };
+
 

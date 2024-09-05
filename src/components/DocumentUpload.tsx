@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { uploadDocument } from '../services/documentService';
+import { getLoggedInUserId } from '../services/authService';
 const DocumentUpload: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
@@ -9,7 +10,8 @@ const DocumentUpload: React.FC = () => {
       setFile(e.target.files[0]);
     }
   };
-  const userId = 1;
+
+  const userId = getLoggedInUserId() || 0;
 
   const handleUpload = async () => {
     if (!file) return;
