@@ -21,27 +21,27 @@ const Home: React.FC = () => {
       </div>
 
       {/* Feature Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-dark-neutral">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 dark:text-dark-text">
             Why Use-Case-GPT?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-4">Customizable Templates</h3>
-              <p className="text-gray-600">
+            <div className="p-6 bg-gray-100 rounded-lg shadow-lg dark:bg-dark-neutral">
+              <h3 className="text-xl text-black font-semibold mb-4 dark:text-dark-text">Customizable Templates</h3>
+              <p className="text-black dark:text-dark-text">
                 Personalize your GPT chats with custom templates and formatting options.
               </p>
             </div>
-            <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-4">Seamless Integration</h3>
-              <p className="text-gray-600">
+            <div className="p-6 bg-gray-100 rounded-lg shadow-lg dark:bg-dark-neutral">
+              <h3 className="text-xl text-black font-semibold mb-4 dark:text-dark-text">Seamless Integration</h3>
+              <p className="text-black dark:text-dark-text">
                 Integrates smoothly with any development environment.
               </p>
             </div>
-            <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-4">User-Friendly Interface</h3>
-              <p className="text-gray-600">
+            <div className="p-6 bg-gray-100 rounded-lg shadow-lg dark:bg-dark-neutral">
+              <h3 className="text-xl text-black font-semibold mb-4 dark:text-dark-text">User-Friendly Interface</h3>
+              <p className="text-black dark:text-dark-text">
                 Easy-to-use interface to make your work faster and more efficient.
               </p>
             </div>
