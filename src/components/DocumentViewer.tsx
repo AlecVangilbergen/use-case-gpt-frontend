@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';  // Import Link from React Router
 import { getDocumentsByUser } from '../services/documentService';
 import { getLoggedInUserId } from '../services/authService';
 
@@ -6,6 +7,7 @@ interface Document {
   id: number;
   content: string;
   user_id: number;
+  name: string;
 }
 
 const DocumentViewer: React.FC = () => {
@@ -33,8 +35,11 @@ const DocumentViewer: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {documents.map((doc) => (
           <div key={doc.id} className="p-4 border border-gray-300 rounded-lg shadow-md bg-white">
-            <h3 className="text-xl font-semibold mb-2">Document {doc.id}</h3>
-            <p className="text-gray-700">{doc.content}</p>
+            <h3 className="text-xl font-semibold mb-2">
+              <Link to={`/documents/document/${doc.id}`} className="text-blue-500 hover:underline">
+                {doc.name}
+              </Link>
+            </h3>
           </div>
         ))}
       </div>
@@ -43,3 +48,4 @@ const DocumentViewer: React.FC = () => {
 };
 
 export default DocumentViewer;
+
