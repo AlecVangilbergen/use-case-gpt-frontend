@@ -34,11 +34,10 @@ const DocumentDetail: React.FC = () => {
 
   return (
     <div>
-        <Link to="/document-viewer" className="btn btn-sm">
+    <div className="container mx-auto mt-10">
+    <Link to="/document-viewer" className="btn btn-sm mb-5">
           Back to Documents
         </Link>
-    <div className="container mx-auto mt-10">
-
       <h2 className="text-2xl font-bold text-gray-800 mb-6">{document.name}</h2>
       <p className="text-gray-700">{document.content}</p>
     </div>

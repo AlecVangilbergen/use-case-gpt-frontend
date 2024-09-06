@@ -47,11 +47,15 @@ const Navbar: React.FC = () => {
     }
   }, [token]);
 
+  const getLinkClass = (path: string) => {
+    return location.pathname === path ? 'btn-active' : 'btn-ghost';
+  };
+
   return (
     <nav className="navbar bg-neutral-100 text-light-text dark:bg-dark-neutral dark:text-dark-text">
       <div className="flex-none">
         <div className="dropdown dropdown-bottom">
-          <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">
+          <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn md:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -124,6 +128,33 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
       </div>
+      <div className="md:block hidden mb-2">
+          {isLoggedIn && (
+            <>
+              <div tabIndex={0} role="button" className={` btn ${getLinkClass('/chat')} rounded-btn`}>
+                <Link to="/chat">Chat</Link>
+              </div>
+
+              <div tabIndex={0} role="button" className={` btn ${getLinkClass('/document-viewer')} rounded-btn`}>
+                <Link to="/document-viewer">Documents</Link>
+              </div>
+
+              <div tabIndex={0} role="button" className={` btn ${getLinkClass('/upload-document')} rounded-btn`}>
+                <Link to="/upload-document">Upload Documents</Link>
+              </div>
+
+              <div tabIndex={0} role="button" className={` btn ${getLinkClass('/users')} rounded-btn`}>
+                <Link to="/users">Users</Link>
+              </div>
+            </>
+          )}
+          {!isLoggedIn && (
+            <div tabIndex={0} role="button" className={` btn ${getLinkClass('/register')} rounded-btn`}>
+            <Link to="/register">Add User</Link>
+          </div>)
+          }
+          
+        </div>
       <div>
         <div className="mr-3 mb-1">
           {!isLoggedIn && (
