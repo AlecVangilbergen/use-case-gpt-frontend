@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import { ChatMessage } from './ChatMessage';
 import { sendMessage } from '../services/chatService';
+import { getLoggedInUserId } from '../services/authService';
 
 interface Message {
   role: 'user' | 'assistant';
   content: string;
 }
 
+
+
 const Chat: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState<string>('');
-  const userId = 1;  // Replace with actual user ID logic
   const [loading, setLoading] = useState(false);
+
+  const userId = getLoggedInUserId();
 
   const handleSendMessage = async () => {
     setLoading(true);
