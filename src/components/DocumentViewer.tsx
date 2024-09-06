@@ -35,7 +35,15 @@ const DocumentViewer: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {documents.map((doc) => (
           <div key={doc.id} className="p-4 border border-gray-300 rounded-lg shadow-md bg-white">
-            <h3 className="text-xl font-semibold mb-2">
+            <h3
+              className="text-xl font-semibold mb-2"
+              style={{
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                maxWidth: '100%',
+              }}
+            >
               <Link to={`/documents/document/${doc.id}`} className="text-blue-500 hover:underline">
                 {doc.name}
               </Link>
@@ -48,4 +56,3 @@ const DocumentViewer: React.FC = () => {
 };
 
 export default DocumentViewer;
-

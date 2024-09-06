@@ -76,7 +76,10 @@ const DocumentUpload: React.FC = () => {
                 className={`w-full px-4 py-2 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${uploading ? 'bg-blue-300' : 'bg-blue-500 hover:bg-blue-700'}`} 
                 disabled={!file || uploading}
               >
-                {uploading ? 'Uploading...' : 'Upload Document'}
+                {uploading ? 'Uploading...'   : 'Upload Document'}
+                {uploading && <progress className="progress w-56"></progress>}
+
+                
               </button>
             </div>
           </div>
