@@ -69,3 +69,7 @@ export const getDocumentById = async (id: number) => {
         return null;
     }
 }
+
+export const getDocumentDownloadUrl = (id: number): string => {
+    return `${API_URL}/documents/${id}/download`;
+  };
