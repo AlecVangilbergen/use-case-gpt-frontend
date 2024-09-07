@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = 'https://192.168.0.159:8000'    // Change this to your backend URL
+const API_URL = '/api'    // Change this to your backend URL
 
 export const uploadDocument = async (user_id: number, file: File, name: string) => {
     const formData = new FormData();
