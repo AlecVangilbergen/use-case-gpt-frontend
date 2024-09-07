@@ -10,14 +10,14 @@ Clone the repository to your local machine using the following command:
 git clone https://github.com/your-username/use-case-gpt.git
 ```
 
-## Step 2: Ensure Docker Daemon is Installed and RunningMake sure Docker is installed and the Docker daemon is running. You can verify this by running:
-
+## Step 2: Ensure Docker Daemon is Installed and Running
+Make sure Docker is installed and the Docker daemon is running. You can verify this by running:
 ```bash
 docker --version
 ```
 
-## Step 3: Enable Docker-ComposeNavigate to the project directory and enable Docker-Compose with the following command:
-
+## Step 3: Enable Docker-Compose
+Navigate to the project directory and enable Docker-Compose with the following command:
 ```bash
 
 docker-compose up
