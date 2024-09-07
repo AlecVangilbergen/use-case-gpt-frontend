@@ -10,8 +10,16 @@ import UserGuidePic3 from '../imgs/Upload1.png';
 import UserGuidePic4 from '../imgs/Upload2.png';
 import UserGuidePic5 from '../imgs/Upload3.png';
 import UserGuidePic6 from '../imgs/Chat.png';
+import { useRef } from 'react';
 
 const Home: React.FC = () => {
+  const userGuideRef = useRef<HTMLDivElement>(null);
+
+  const scrollToUserGuide = () => {
+    if (userGuideRef.current) {
+      userGuideRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <main className="min-h-screen bg-neutral-100 dark:bg-dark-neutral">
       {/* Hero Section */}
@@ -23,7 +31,7 @@ const Home: React.FC = () => {
           <p className="text-xl md:text-2xl mb-12">
             Use-Case-GPT is a powerful tool that helps you generate chat responses in seconds.
           </p>
-          <Button color="white" className="text-indigo-600" placeholder="" onPointerEnterCapture={() => { }} onPointerLeaveCapture={() => { }}>
+          <Button color="white" className="text-indigo-600" placeholder="" onClick={scrollToUserGuide} onPointerEnterCapture={() => { }} onPointerLeaveCapture={() => { }}>
             Get Started
           </Button>
         </div>
@@ -72,7 +80,7 @@ const Home: React.FC = () => {
         </div>
       </section>
       {/* User Guide Section */}
-      <section className="py-20 bg-white dark:bg-dark-neutral">
+      <section ref={userGuideRef} className="py-20 bg-white dark:bg-dark-neutral">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 dark:text-dark-text">
             How to Use Use-Case-GPT
@@ -100,7 +108,7 @@ const Home: React.FC = () => {
             <div className="p-6 bg-gray-50 rounded-lg shadow-lg dark:bg-dark-neutral flex items-center justify-between text-right">
               <img src={UserGuidePic3} alt="Usage Guide" className="w-1/3 ml-4 rounded" />
               <div>
-                <h3 className="text-4xl text-black font-semibold mb-4 dark:text-dark-text">Step 3: Getting those documents in there for the RAG</h3>
+                <h3 className="text-4xl text-black font-semibold mb-4 dark:text-dark-text">Step 3.1: Getting those documents in there for the RAG</h3>
                 <p className="text-black dark:text-dark-text">
                   RAG stands for "Retrieval Augmented Generation". It's what the GPT uses to get more info out of your documents, but before that you need to upload them.
                 </p>
@@ -110,7 +118,7 @@ const Home: React.FC = () => {
             </div>
             <div className="p-6 bg-gray-50 rounded-lg shadow-lg dark:bg-dark-neutral flex items-center justify-between text-left">
               <div>
-                <h3 className="text-4xl text-black font-semibold mb-4 dark:text-dark-text">Step 3: Getting those documents in there for the RAG</h3>
+                <h3 className="text-4xl text-black font-semibold mb-4 dark:text-dark-text">Step 3.2: Getting those documents in there for the RAG</h3>
                 <p className="text-black dark:text-dark-text">
                   Press the 'Choose file' button and your machine will allow you to choose a document, but be vigilant! The system only works with the supported files (PDF, Dockx and txt) so keep that in mind when uploading the files!                </p>
               </div>
@@ -119,7 +127,7 @@ const Home: React.FC = () => {
             <div className="p-6 bg-gray-50 rounded-lg shadow-lg dark:bg-dark-neutral flex items-center justify-between text-right">
               <img src={UserGuidePic4} alt="Usage Guide" className="w-1/3 ml-4 rounded" />
               <div>
-                <h3 className="text-4xl text-black font-semibold mb-4 dark:text-dark-text">Step 3: Getting those documents in there for the RAG</h3>
+                <h3 className="text-4xl text-black font-semibold mb-4 dark:text-dark-text">Step 3.3: Getting those documents in there for the RAG</h3>
                 <p className="text-black dark:text-dark-text">
                   Once you have uploaded the file, the window will reload and you will see the document in the list of documents.
                 </p>
