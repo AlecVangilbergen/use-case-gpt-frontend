@@ -1,9 +1,9 @@
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import { Button } from "@material-tailwind/react";
-import InterfacePic from '../assets/663d5ae73b4f55bf91555fdd_388_DesignBlogHeader_2400x1260.jpg';
-import CustomizablePic from '../assets/1692605748469.jpeg';
-import InstallationPic from '../assets/github-cover.jpg';
+import InterfacePic from '../imgs/663d5ae73b4f55bf91555fdd_388_DesignBlogHeader_2400x1260.jpg';
+import CustomizablePic from '../imgs/1692605748469.jpeg';
+import InstallationPic from '../imgs/github-cover.jpg';
 
 const Home: React.FC = () => {
   return (
