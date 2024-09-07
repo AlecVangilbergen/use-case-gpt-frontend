@@ -1,30 +1,41 @@
-# React + TypeScript + Vite
+## Copilot
+Here's a README file based on the steps you provided:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Use-Case-GPT Getting Started Guide
 
-Currently, two official plugins are available:
+Follow these steps to get the Use-Case-GPT application up and running on your local machine.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Step 1: Clone Repository to Local Machine
 
-## Expanding the ESLint configuration
+Clone the repository to your local machine using the following command:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+git clone https://github.com/your-username/use-case-gpt.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Step 2: Ensure Docker Daemon is Installed and RunningMake sure Docker is installed and the Docker daemon is running. You can verify this by running:
+
+```bash
+docker --version
+```
+
+## Step 3: Enable Docker-ComposeNavigate to the project directory and enable Docker-Compose with the following command:
+
+```bash
+
+docker-compose up
+
+```
+
+## Step 4: Verify Backend is Running CorrectlyOpen your browser and go to http://localhost:8000/. You should see a welcome message indicating that the backend is running correctly.
+```bash	
+{"message": "Welcome to the API, made with FastAPI!!"}
+```
+
+## Step 5: Start Using the Application
+Go to ``alecvangilbergen.github.io/use-case-gpt-frontend`` and start using the application!
+If you encounter any issues or need further assistance, feel free to reach out!
+
+
+Feel free to adjust any details or add more information as needed. If you have any other steps or details to include, let me know!
+
