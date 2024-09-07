@@ -73,3 +73,12 @@ export const getDocumentById = async (id: number) => {
 export const getDocumentDownloadUrl = (id: number): string => {
     return `${API_URL}/documents/${id}/download`;
   };
+
+export const fetchDocuments = async (user_id: number) => {
+    try {
+      const response = await getDocumentsByUser(user_id);  // Fetch documents for the user
+      console.log('Documents:', response);
+    } catch (error) {
+      console.error('Error fetching documents:', error);
+    }
+  };

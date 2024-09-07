@@ -104,14 +104,7 @@ const Navbar: React.FC = () => {
                   </Link>
                 </li>)
               }
-              {isLoggedIn && (
-                <li>
-                  <Link to="/upload-document" className="text-dark-text dark:text-dark-text">
-                    Upload Document
-                  </Link>
-                </li>
-              )
-              }
+              
 
             </>
 
@@ -137,10 +130,6 @@ const Navbar: React.FC = () => {
 
             <div tabIndex={0} role="button" className={` btn ${getLinkClass('/document-viewer')} rounded-btn mt-1 font-bold dark:text-dark-text`}>
               <Link to="/document-viewer">Documents</Link>
-            </div>
-
-            <div tabIndex={0} role="button" className={` btn ${getLinkClass('/upload-document')} rounded-btn mt-1 font-bold dark:text-dark-text`}>
-              <Link to="/upload-document">Upload Documents</Link>
             </div>
 
             <div tabIndex={0} role="button" className={` btn ${getLinkClass('/users')} rounded-btn mt-1 font-bold dark:text-dark-text`}>

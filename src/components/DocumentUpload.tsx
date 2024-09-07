@@ -33,6 +33,7 @@ const DocumentUpload: React.FC = () => {
       alert('Document uploaded successfully');
       setFile(null);  // Reset file input after upload
       setDocumentName('');  // Reset document name after upload
+      window.location.reload();  // Reload the page to fetch the updated documents
     } catch (error) {
       console.error('Error uploading document:', error);
       alert('Failed to upload document');
@@ -44,19 +45,21 @@ const DocumentUpload: React.FC = () => {
   return (
     <div className="flex justify-center mt-10">
       <div className="w-full max-w-md">
-        <div className="bg-white shadow-md rounded-lg overflow-hidden">
+        <div className="bg-base rounded-lg overflow-hidden">
           <div className="p-6">
-            <h2 className="text-2xl font-bold mb-4 text-center">Upload a Document</h2>
+            <h2 className="text-2xl text-black dark:text-dark-text font-bold mb-4 text-center">Upload a Document</h2>
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="file">
                 Select File
               </label>
-              <input 
+              <div className='tooltip' data-tip="Only PDF, Dockx and txt files are accepted">
+                <input 
                 type="file" 
                 onChange={handleFileChange} 
                 className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" 
                 id="file"
               />
+              </div>
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="documentName">
@@ -67,7 +70,7 @@ const DocumentUpload: React.FC = () => {
                 id="documentName" 
                 value={documentName} 
                 readOnly 
-                className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                className="w-full px-3 py-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
               />
             </div>
             <div className="flex justify-center">
