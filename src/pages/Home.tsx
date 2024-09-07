@@ -1,6 +1,9 @@
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import { Button } from "@material-tailwind/react";
+import InterfacePic from '../assets/663d5ae73b4f55bf91555fdd_388_DesignBlogHeader_2400x1260.jpg';
+import CustomizablePic from '../assets/1692605748469.jpeg';
+import InstallationPic from '../assets/github-cover.jpg';
 
 const Home: React.FC = () => {
   return (
@@ -33,10 +36,10 @@ const Home: React.FC = () => {
             Use-Case-GPT is an easy-to-use tool that allows your ChatGPT chats to be tailored to your needs. Enter your own system prompts and upload your own files and let Use-Case-GPT do the rest.
           </p>
         </div>
-        <img src="src\assets\1692605748469.jpeg" alt="Customizable Templates" className="w-1/3 ml-4 rounded" />
+        <img src={CustomizablePic} alt="Customizable Templates" className="w-1/3 ml-4 rounded" />
       </div>
       <div className="p-6 bg-gray-50 rounded-lg shadow-lg dark:bg-dark-neutral flex items-center justify-between text-right">
-      <img src="src\assets\github-cover.jpg" alt="Seamless Integration" className="w-1/3 ml-4 rounded" />
+      <img src={InstallationPic} alt="Seamless Integration" className="w-1/3 ml-4 rounded" />
         <div>
           <h3 className="text-4xl text-black font-semibold mb-4 dark:text-dark-text">Easy Installation</h3>
           <p className="text-black dark:text-dark-text">
@@ -57,7 +60,7 @@ const Home: React.FC = () => {
             Easy-to-use interface to make your work faster and more efficient.
           </p>
         </div>
-        <img src="src\assets\663d5ae73b4f55bf91555fdd_388_DesignBlogHeader_2400x1260.jpg" alt="User-Friendly Interface" className="w-1/3 ml-4 rounded" />
+        <img src={InterfacePic} alt="User-Friendly Interface" className="w-1/3 ml-4 rounded" />
       </div>
     </div>
   </div>
