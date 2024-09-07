@@ -1,6 +1,3 @@
-## Copilot
-Here's a README file based on the steps you provided:
-
 # Use-Case-GPT Getting Started Guide
 
 Follow these steps to get the Use-Case-GPT application up and running on your local machine.
@@ -27,7 +24,8 @@ docker-compose up
 
 ```
 
-## Step 4: Verify Backend is Running CorrectlyOpen your browser and go to http://localhost:8000/. You should see a welcome message indicating that the backend is running correctly.
+## Step 4: Verify Backend is Running Correctly
+Open your browser and go to http://localhost:8000/. You should see a welcome message indicating that the backend is running correctly.
 ```bash	
 {"message": "Welcome to the API, made with FastAPI!!"}
 ```
