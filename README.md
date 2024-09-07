@@ -24,13 +24,29 @@ docker-compose up
 
 ```
 
-## Step 4: Verify Backend is Running Correctly
+## Step 4: Create DB in newly made Database container
+```bash
+
+CREATE DATABASE use-case-gpt;
+
+```
+
+## Step 5: Enter newly made DB and add vector extension
+
+```bash
+psql -U postgres -d use-case-gpt
+```
+```bash
+CREATE EXTENSION vector;
+```
+
+## Step 5: Verify Backend is Running Correctly
 Open your browser and go to http://localhost:8000/. You should see a welcome message indicating that the backend is running correctly.
 ```bash	
 {"message": "Welcome to the API, made with FastAPI!!"}
 ```
 
-## Step 5: Start Using the Application
+## Step 6: Start Using the Application
 Go to https://alecvangilbergen.github.io/use-case-gpt-frontend/ and start using the application!
 If you encounter any issues or need further assistance, feel free to reach out!
 
