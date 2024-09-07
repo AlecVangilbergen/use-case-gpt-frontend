@@ -31,7 +31,7 @@ Open your browser and go to http://localhost:8000/. You should see a welcome mes
 ```
 
 ## Step 5: Start Using the Application
-Go to ``alecvangilbergen.github.io/use-case-gpt-frontend`` and start using the application!
+Go to ``https://alecvangilbergen.github.io/use-case-gpt-frontend/`` and start using the application!
 If you encounter any issues or need further assistance, feel free to reach out!
 
 
